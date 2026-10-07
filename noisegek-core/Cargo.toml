@@ -1,0 +1,13 @@
+[package]
+name = "noisegek-core"
+description = "NOISEGEK: plugins (efecto e instrumento), parámetros e interfaz compartidos"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+noisegek-dsp = { path = "../noisegek-dsp" }
+nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git" }
+nih_plug_egui = { git = "https://github.com/robbert-vdh/nih-plug.git" }
+serde = { version = "1", features = ["derive"] }

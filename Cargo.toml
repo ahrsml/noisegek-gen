@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = ["noisegek-dsp", "noisegek-core", "noisegek-gen", "xtask"]
+exclude = ["third_party"]
+
+[workspace.package]
+version = "0.8.1"
+edition = "2021"
+authors = ["Adolfo Rosas (@ahrsml)"]
+license = "GPL-3.0-or-later"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+
+[profile.profiling]
+inherits = "release"
+debug = true
+strip = "none"
+
+# nih-plug con dos correcciones propias (ver third_party/PATCHES.md)
+[patch."https://github.com/robbert-vdh/nih-plug.git"]
+nih_plug = { path = "third_party/nih-plug" }
+nih_plug_egui = { path = "third_party/nih-plug/nih_plug_egui" }
+nih_plug_xtask = { path = "third_party/nih-plug/nih_plug_xtask" }

@@ -1,0 +1,9 @@
+[package]
+name = "noisegek-dsp"
+description = "NOISEGEK: núcleo DSP (cadena de distorsión, ruido, filtro y secuenciador)"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
